@@ -23,7 +23,7 @@ const engine = await runTask('构造数据库查询索引', async () => {
   const index = await VectorStoreIndex.fromVectorStore(vectorStore);
 
   return index.asQueryEngine();
-})
+});
 
 await runTask('问题向量化并生成结果', async () => {
   const res = await engine.query({ query: TXT_QUESTION, stream: true });
